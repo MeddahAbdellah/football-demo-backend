@@ -73,21 +73,5 @@ Once MongoDB Database Tools are installed, you can populate your database using 
 
 ```bash
 # Example database population command
-mongorestore --db your_database_name path/to/your/dump
+npm run populate-db
 ```
-
-## Contributing
-
-Explain how others can contribute to your project. Include guidelines for submitting issues, feature requests, and pull requests.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-Specify the license under which your project is distributed. For example:
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
