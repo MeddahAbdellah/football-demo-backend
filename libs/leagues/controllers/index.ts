@@ -11,15 +11,20 @@ import { Types } from "mongoose";
  * 6. I return the list of teams with the object, since the size of the list is not huge
  */
 
-export const getLeaguesController = async (req: Request, res: Response) => {
+export const searchLeaguesController = async (req: Request, res: Response) => {
   const { name } = req.query;
-  if (typeof name !== "string") {
+  if (name && typeof name !== "string") {
     res.status(400).json({ error: "Name parameter must be a string" });
     return;
   }
 
   try {
-    const leagues = await leagueService().searchLeagues(name);
+    if (name) {
+      const leagues = await leagueService().searchLeagues(name);
+      res.json(leagues);
+      return;
+    }
+    const leagues = await leagueService().getAllLeagues();
     res.json(leagues);
   } catch (error) {
     console.error("Error fetching leagues:", error);
@@ -36,7 +41,6 @@ export const getLeagueTeamsController = async (req: Request, res: Response) => {
 
   try {
     const teams = await leagueService().getLeagueTeams(leagueId);
-    console.log({ teams });
     res.json(teams);
   } catch (error) {
     console.error("Error fetching teams:", error);

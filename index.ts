@@ -14,7 +14,6 @@ const isDevelopment = process.env.NODE_ENV === "development";
 
 if (isDevelopment) {
   app.use(cors());
-  console.log("CORS enabled for development");
 } else {
   app.use(
     cors({

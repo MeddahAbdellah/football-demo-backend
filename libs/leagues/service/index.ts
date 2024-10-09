@@ -2,6 +2,9 @@ import { LeagueModel } from "../model";
 
 export const leagueService = () => {
   return {
+    getAllLeagues: async () => {
+      return LeagueModel.find().lean();
+    },
     searchLeagues: async (name: string) => {
       const regex = new RegExp(`^${name}`, "i");
 
