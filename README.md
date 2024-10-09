@@ -6,8 +6,8 @@ This is a demo project.
 
 - [Environment Requirements](#requirements)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Database Population](#database-population)
+- [Usage](#usage)
 
 ## Environment Requirements
 
@@ -23,15 +23,6 @@ Explain how to install your project. Include any prerequisites and step-by-step 
 git clone https://github.com/yourusername/your-repo-name.git
 cd your-repo-name
 npm install  # or whatever package manager you're using
-```
-
-## Usage
-
-Provide instructions on how to use your project after installation. Include code examples if applicable.
-
-```bash
-# Example usage
-npm run start
 ```
 
 ## Database Population
@@ -74,4 +65,13 @@ Once MongoDB Database Tools are installed, you can populate your database using 
 ```bash
 # Example database population command
 npm run populate-db
+```
+
+## Usage
+
+Provide instructions on how to use your project after installation. Include code examples if applicable.
+
+```bash
+# Example usage
+npm run start
 ```
