@@ -1,7 +1,9 @@
 import { leagueService } from "./";
 import { LeagueModel } from "../model";
 
-// Mock the LeagueModel
+/**
+ * Since the searchLeagues function is a bit more complex, I would write a unit test for it, to lock it's behavior.
+ */
 jest.mock("../model", () => ({
   LeagueModel: {
     find: jest.fn().mockReturnThis(),
