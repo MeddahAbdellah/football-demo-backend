@@ -1,3 +1,25 @@
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     League:
+ *       type: object
+ *       properties:
+ *         name:
+ *           type: string
+ *         sport:
+ *           type: string
+ *         teams:
+ *           type: array
+ *           items:
+ *             type: string
+ *             format: uuid
+ *     LeagueId:
+ *       type: string
+ *       format: objectId
+ *       description: Unique identifier for a team
+ */
+
 import { TeamId } from "@libs/teams";
 import { Schema } from "mongoose";
 

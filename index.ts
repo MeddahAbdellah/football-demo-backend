@@ -5,6 +5,9 @@ dotenv.config();
 import { loadMongoModels } from "@libs/database";
 loadMongoModels();
 
+import swaggerUi from "swagger-ui-express";
+import swaggerSpecs from "./swagger";
+
 import { leaguesRouter } from "@libs/leagues";
 import { teamsRouter } from "@libs/teams";
 
@@ -23,6 +26,8 @@ if (isDevelopment) {
     }),
   );
 }
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 app.get("/health-check", (_req: Request, res: Response) => {
   res.send("ok");
