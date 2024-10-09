@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { teamsService } from "../service";
+import { Types } from "mongoose";
 
 /**
  * Few comments here,
@@ -11,14 +12,15 @@ import { teamsService } from "../service";
  */
 export const getTeamPlayers = async (req: Request, res: Response) => {
   const { teamId } = req.params;
-  if (typeof teamId !== "string") {
-    res.status(400).json({ error: "League ID must be a string" });
+
+  if (!Types.ObjectId.isValid(teamId)) {
+    res.status(400).json({ error: "Team ID must be a valid ID" });
     return;
   }
 
   try {
-    const teams = await teamsService().getPlayersOfTeam(teamId);
-    res.json(teams);
+    const players = await teamsService().getPlayersOfTeam(teamId);
+    res.json(players);
   } catch (error) {
     console.error("Error fetching teams:", error);
     res.status(500).json({ error: "Internal server error" });

@@ -8,6 +8,7 @@
     "build": "tsc && tsc-alias",
     "populate-db": "node ./scripts/populate-db.js",
     "lint": "eslint . --ext .ts",
+    "test": "jest",
     "generate-docs": "node -e \"console.log(JSON.stringify(require('./config/swagger').default))\" > openapi-spec.json"
   },
   "keywords": [],

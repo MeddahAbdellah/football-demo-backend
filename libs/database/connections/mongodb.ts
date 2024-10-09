@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
-// Destructure environment variables
+import dotenv from "dotenv";
+dotenv.config();
+
 const {
   MONGO_USERNAME,
   MONGO_PASSWORD,
