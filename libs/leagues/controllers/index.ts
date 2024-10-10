@@ -9,6 +9,8 @@ import { Types } from "mongoose";
  * 3. I have not added any logging middleware here, but it is a good practice to add one
  * 4. I have not added any security middleware here, but it is necessary to add one
  * 6. I return the list of teams with the object, since the size of the list is not huge
+ * 7. I have willingly skipped pagination, knowing that's necessary in a rest api, for simplicity and due to the fact
+ * that there isn't much data
  */
 
 export const searchLeaguesController = async (req: Request, res: Response) => {
